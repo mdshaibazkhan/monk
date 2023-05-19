@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Fetch code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/mdshaibazkhan/monk.git'
+            }
+        }
+        stage('Install tomcat') {
+            steps {
+                sh 'sudo apt install tomcat -y'
+            }
+        }
+        stage('Deploy code') {
+            steps {
+                sh 'sudo cp -R * /var/www/html/'
+            }
+        }
+    }
+}
