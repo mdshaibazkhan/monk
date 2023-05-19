@@ -7,9 +7,9 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/mdshaibazkhan/monk.git'
             }
         }
-        stage('Install tomcat') {
+        stage('Install apache') {
             steps {
-                sh 'sudo apt install tomcat -y'
+                sh 'sudo apt install apache2 -y'
             }
         }
         stage('Deploy code') {
