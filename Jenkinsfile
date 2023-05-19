@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('install apache') {
+      steps {
+        sh 'sudo apt install apache2 -y'
+      }
+    }
+
   }
 }
